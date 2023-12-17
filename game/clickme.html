@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<link rel="stylesheet" href="GCE.css" />
+</head>
+
+<body>
+	<div id="canvasContainer">
+		<canvas class='GC' id="og" name="background" style="image-rendering:pixelated;"></canvas>
+	</div>
+	<div id="ui">
+		<button onclick="startGame();gameOn = true;TileMap = false" id="start" class="GCEbutton">start</button>
+		<button onclick="gameOn = false;
+                         if(TileMap){TileMap = false;document.getElementById('mapEd').style.display ='none'}else{TileMap= true;}" id="maptile" class="GCEbutton" style="display: none">map editor</button>
+		<label for="chooseSprite" style="display: none"> choose sprite</label>
+		<select name="chooseSprite" id="TileSprites" style="display: none">
+		</select>
+		<div style="display: none">
+			<label for="switch"> turn on/off grid</label>
+			<input name="switch" id="gridSwitch" type="checkbox" />
+			<label for="x"> split grid horizontaly</label>
+			<input name="x" id="gridX" type="number" style="width: 50px" />
+			<label for="y"> split grid verticaly</label>
+			<input name="y" id="gridY" type="number" style="width: 50px" />
+		</div>
+	</div>
+	<canvas id="mapEd" style="z-index: 99999;border: solid 1px black;
+    position: absolute; left: 0; top: 0;image-rendering:pixelated;">
+
+	</canvas>
+
+	<script src="GCE.js"></script>
+	<script src="game.js"></script>
+</body>
+
+</html>
